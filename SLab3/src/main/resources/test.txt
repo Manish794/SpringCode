@@ -1,0 +1,29 @@
+<bean id="s1" class="com.manish.spring.domain.Student"/>
+
+    <bean id="s2" class="com.manish.spring.domain.Student">
+        <property name="sid" value="101"/>
+        <property name="sname" value="Manish"/>
+    </bean>
+
+    <bean id="s3" class="com.manish.spring.domain.Student">
+        <constructor-arg value="102" type="int"/>
+    </bean>
+
+    <bean id="s4" class="com.manish.spring.domain.Student">
+        <constructor-arg value="Kumar"/>
+    </bean>
+
+    <bean id="s5" class="com.manish.spring.domain.Student">
+        <constructor-arg index="1" value="Abhi"/>
+        <constructor-arg index="0" value="103" type="int"/>
+    </bean>
+
+    <bean id="s6" class="com.manish.spring.domain.Student">
+        <constructor-arg value="104" type="int"/>
+        <property name="sname" value="Rahul"/>
+     </bean>
+
+    <bean id="s7" class="com.manish.spring.domain.Student">
+        <constructor-arg value="Rohan"/>
+        <property name="sid" value="105"/>
+    </bean>
