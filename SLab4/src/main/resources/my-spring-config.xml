@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="s1" class="com.manish.spring.domain.Student">
+        <property name="sid" value="101"/>
+        <property name="sname" value="Manish"/>
+    </bean>
+
+    <bean id="e1" class="com.manish.spring.domain.Employee">
+        <property name="eid" value="1001"/>
+        <property name="ename" value="Kumar"/>
+    </bean>
+
+    <!-- Explicit Wiring -->
+    <bean id="serv1" class="com.manish.spring.domain.Service">
+        <property name="stud" ref="s1"/>
+        <property name="emp" ref="e1"/>
+    </bean>
+
+    <bean id="serv2" class="com.manish.spring.domain.Service">
+        <constructor-arg ref="s1"/>
+        <property name="emp" ref="e1"/>
+    </bean>
+    <bean id="serv3" class="com.manish.spring.domain.Service">
+        <constructor-arg ref="e1"/>
+        <property name="stud" ref="s1"/>
+    </bean>
+    <bean id="serv4" class="com.manish.spring.domain.Service">
+        <constructor-arg ref="s1"/>
+        <constructor-arg ref="e1"/>
+    </bean>
+
+    <bean id="serv5" class="com.manish.spring.domain.Service"/>
+
+</beans>

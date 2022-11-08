@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean id="abc" class="com.manish.spring.domain.Student" primary="true">
+            <property name="sid" value="101"/>
+            <property name="sname" value="Manish"/>
+        </bean>
+
+        <bean id="stud" class="com.manish.spring.domain.Student">
+            <property name="sid" value="102"/>
+            <property name="sname" value="Rahul"/>
+        </bean>
+
+
+
+</beans>
