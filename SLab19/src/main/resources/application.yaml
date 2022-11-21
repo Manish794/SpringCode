@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /myapp
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+db:
+  name: MySQL-default
+  url: jdbc:mysql://localhost:3306-default
+  username: root-default
+  password: AtAbc@2022-default
+  mySqlDB: true
+
+myserver:
+  ip:
+    - 1.1.1.1-def
+    - 2.2.2.2-def
+    - 3.3.3.3-def
