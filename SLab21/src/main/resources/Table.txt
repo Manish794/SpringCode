@@ -1,0 +1,1 @@
+CREATE TABLE myusers(userId varchar(5) PRIMARY KEY, fullName varchar(30), email varchar(50) UNIQUE, phone bigint, loginId varchar(15) UNIQUE, loginPassword varchar(20));
