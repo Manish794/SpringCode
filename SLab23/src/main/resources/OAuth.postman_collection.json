@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "e100eb69-1492-4f6e-8225-3c7dd7561f8a",
+		"name": "OAuth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users?access_token=y5-0KTUgy45I-KUJxAoyafTnNnU",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "y5-0KTUgy45I-KUJxAoyafTnNnU"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Kumar K\",\r\n    \"email\": \"kumar@tbabacom\",\r\n    \"phone\" : 3333333333,\r\n    \"loginId\":\"kumar@1\",\r\n    \"loginPassword\": \"kumar@11\",\r\n    \"role\":\"ROLE_ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users?access_token=3HnnTPI8hUtCLbwjhc80VQj_sYY",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "3HnnTPI8hUtCLbwjhc80VQj_sYY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"loginId\":\"xyz@11\",\r\n    \"loginPassword\": \"password7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"U-001\",\r\n    \"fullName\": \"M Kumar\",\r\n    \"email\": \"mkumar@tbaba.com\",\r\n    \"phone\" : 98653215847,\r\n    \"loginId\":\"mkumar@11\",\r\n    \"loginPassword\": \"password1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Id",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "headerPrefix",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "queryParams",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users/U-002?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users",
+								"U-002"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users/searchByEmail?email=mkumar@tbaba.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users",
+								"searchByEmail"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "mkumar@tbaba.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By Phone",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users/searchByPhone?phone=87878787871",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users",
+								"searchByPhone"
+							],
+							"query": [
+								{
+									"key": "phone",
+									"value": "87878787871"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/users/U-001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"users",
+								"U-001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PDF Generator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/myapp/users/generatePDFReport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"myapp",
+								"users",
+								"generatePDFReport"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bookName\": \"CSS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/books?access_token=rSVGHHCVQ04aYmqCIX_jNBgsx4k",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"books"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "rSVGHHCVQ04aYmqCIX_jNBgsx4k"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Books",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/oauthapp/books?access_token=rSVGHHCVQ04aYmqCIX_jNBgsx4k",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"oauthapp",
+								"books"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "rSVGHHCVQ04aYmqCIX_jNBgsx4k"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Check Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "abcd1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manish",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/oauthapp/oauth/check_token?token=rwWSm6ckuhC56W8QswTVu-ilTMM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"oauthapp",
+						"oauth",
+						"check_token"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "rwWSm6ckuhC56W8QswTVu-ilTMM"
+						}
+					]
+				},
+				"description": "Generate Token"
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "abcd1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manish",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "manish",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "manish@1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/oauthapp/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"oauthapp",
+						"oauth",
+						"token"
+					]
+				},
+				"description": "Generate Token"
+			},
+			"response": []
+		}
+	]
+}

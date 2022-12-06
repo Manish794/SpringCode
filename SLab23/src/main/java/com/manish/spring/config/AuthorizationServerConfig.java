@@ -7,19 +7,9 @@ import org.springframework.security.oauth2.config.annotation.configurers.ClientD
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.approval.UserApprovalHandler;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-
-/**
- * Created by IntelliJ IDEA.
- * Project : spring-boot-security-oauth2-example
- * User: hendisantika
- * Email: hendisantika@gmail.com
- * Telegram : @hendisantika34
- * Date: 31/12/17
- * Time: 16.06
- * To change this template use File | Settings | File Templates.
- */
 
 @Configuration
 @EnableAuthorizationServer
@@ -41,6 +31,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
+        oauthServer.tokenKeyAccess("permitAll()")
+                .checkTokenAccess("isAuthenticated()");
+    }
 
     @Override
     public void configure(ClientDetailsServiceConfigurer configurer) throws Exception {
